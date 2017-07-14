@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ListViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZu-QQ-7a7">
+                                <rect key="frame" x="16" y="136" width="343" height="24"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="UIr-UQ-VWW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Select Your Location"/>
+                                <connections>
+                                    <action selector="btn_SelectYourLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E9S-lM-eSs"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNT-z9-9Qt">
+                                <rect key="frame" x="16" y="160" width="343" height="507"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="24" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-G1-A8x">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="507"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="sectionIndexBackgroundColor" red="1" green="0.5" blue="0.0" alpha="0.59289383559999997" colorSpace="calibratedRGB"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" red="1" green="0.22352941179999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ois-fY-IMU">
+                                                <rect key="frame" x="0.0" y="28" width="343" height="24"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ois-fY-IMU" id="zhx-U5-UF0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="vlp-kT-YPm"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="oKZ-88-dC8"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Trv-G1-A8x" secondAttribute="trailing" id="DM4-El-mZu"/>
+                                    <constraint firstItem="Trv-G1-A8x" firstAttribute="leading" secondItem="jNT-z9-9Qt" secondAttribute="leading" id="PTZ-eE-fly"/>
+                                    <constraint firstItem="Trv-G1-A8x" firstAttribute="top" secondItem="jNT-z9-9Qt" secondAttribute="top" id="QGQ-8H-vIT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Trv-G1-A8x" secondAttribute="bottom" id="aEm-S1-UNR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jNT-z9-9Qt" firstAttribute="top" secondItem="oZu-QQ-7a7" secondAttribute="bottom" id="5K3-zZ-EQr"/>
+                            <constraint firstItem="oZu-QQ-7a7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="116" id="HGh-qs-NrF"/>
+                            <constraint firstItem="oZu-QQ-7a7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MS0-lw-RkF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jNT-z9-9Qt" secondAttribute="bottom" id="hIV-ze-SdZ"/>
+                            <constraint firstItem="jNT-z9-9Qt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hJe-kN-tnd"/>
+                            <constraint firstItem="jNT-z9-9Qt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iKI-nO-8Io"/>
+                            <constraint firstItem="oZu-QQ-7a7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="k3R-Q8-S66"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ContView" destination="jNT-z9-9Qt" id="2ar-pW-GGn"/>
+                        <outlet property="btn_SelectYourLocation" destination="oZu-QQ-7a7" id="A00-BI-Y2h"/>
+                        <outlet property="tblView" destination="Trv-G1-A8x" id="6eB-6f-4rx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>
